@@ -7,7 +7,7 @@ namespace QuantityMeasurment
     public class length
     {
         //Enum data members
-        public enum Unit { Feet, Inch }
+        public enum Unit { Feet, Inch, Yard }
         
         //Variables.
         public Unit unit;
@@ -23,28 +23,22 @@ namespace QuantityMeasurment
             this.unit = unit;
             this.value = value;
         }
-       
+
         // IsEqual Function to Convert Input Units Into Centi-Meter And Checking Their Equality.     
         public bool IsEqual(length object1, length object2)
         {
-            //Checking Feet and Inch Values Are Equal Or Not in If Block And Vice Versa In Else If Block.
-            if (object1.unit.Equals(Unit.Feet) && object2.unit.Equals(Unit.Inch))
+            try
             {
-                double feetToCm = object1.value * 30.48;
-                double inchToCm = object2.value * 2.54;
-                if (feetToCm == inchToCm)
+                double object1ValueInCentimeter = ConvertUnit.ConvertToInch(object1);
+                double object2ValueInCentimeter = ConvertUnit.ConvertToInch(object2);
+                if (object1ValueInCentimeter == object2ValueInCentimeter)
                 {
                     return true;
                 }
             }
-            else if (object1.unit.Equals(Unit.Inch) && object2.unit.Equals(Unit.Feet))
+            catch (Exception)
             {
-                double inchToCm = object1.value * 2.54;
-                double feetToCm = object2.value * 30.48;
-                if (inchToCm == feetToCm)
-                {
-                    return true;
-                }
+                throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INVALID_TYPE, "Invalid Type");
             }
             return false;
         }
