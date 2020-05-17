@@ -4,10 +4,10 @@ using System.Text;
 
 namespace QuantityMeasurment
 {
-    // Enum For Length Unit.
+    // Enum For Length Unit and volumn unit.
     public enum Unit
     {
-        Feet, Inch, Yard, Centimeter
+        Feet, Inch, Yard, Centimeter, Gallon, Mililitre
     }
 
 }
