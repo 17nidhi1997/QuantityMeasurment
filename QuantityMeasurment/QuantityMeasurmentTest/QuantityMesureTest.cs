@@ -460,7 +460,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 7.31 Given 1 Kilogram And 1000 Gram Should Return Equal.
         /// </summary>
         [Test]
-        public void Given1KiloGramsAnd1000GramsShouldReturnEqul()
+        public void Given1KiloGramsAnd1000Grams_WhenCalculated_ShouldReturnEqul()
         {
             //Creating Instances Of Weights.
             Weight kiloGrams = new Weight(Unit.KiloGram, 1.0);
@@ -474,7 +474,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 7.32 Given 1 Tonne And 1000  kilograms Should Return Equal.
         /// </summary>
         [Test]
-        public void Given1TonneAnd1000KilogramsShouldReturnEqual()
+        public void Given1TonneAnd1000Kilograms_WhenCalculated_ShouldReturnEqual()
         {
             //Creating Weight Instances For Tonne And Kilogram.
             Weight tonne = new Weight(Unit.Tonne, 1);
@@ -488,7 +488,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 7.33 Given 1 Tonne And 1000 Grams Should Return 1001 Kilograms.
         /// </summary>
         [Test]
-        public void Given1TonneAnd1000GramShouldReturn1001Kilogram()
+        public void Given1TonneAnd1000Gram_WhenCalculated_ShouldReturn1001Kilogram()
         {
             //Creating Weight Instances For Tonne And Grams.
             Weight tonne = new Weight(Unit.Tonne, 1);
