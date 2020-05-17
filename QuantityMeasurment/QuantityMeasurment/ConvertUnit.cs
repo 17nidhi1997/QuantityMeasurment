@@ -132,6 +132,26 @@ namespace QuantityMeasurment
                 throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INVALID_TYPE, "Invalid Type");
             }
         }
+       
+        // Function To Convert Temperature Into Celsius.
+        public static double ConvertToCelsius(Temperature objectName)
+        {
+            try
+            {
+                double value = objectName.value;
+
+                //Checking Unit And Converting Into Celsius.
+                if (objectName.unit.Equals(Unit.Fahrenheit))
+                {
+                    value = (objectName.value - 32) * 5 / 9;
+                }
+                return value;
+            }
+            catch (QuantityMeasurementException)
+            {
+                throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INVALID_TYPE, "Invalid Type");
+            }
+        }
     }
 }
 
