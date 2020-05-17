@@ -500,5 +500,19 @@ namespace QuantityMeasurmentTest
             //Asserting Values.
             Assert.AreEqual(expected, result);
         }
+
+        /// <summary>
+        /// Test Case 8.34 Given 212 Fahreneit And 100 Celsius Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given212FahrenheitAnd100Celsius_WhenCalculated_ShouldReturnEqual()
+        {
+            //Creating Temperature Instances For Fahrenheit And Celsius.
+            Temperature fahrenheit = new Temperature(Unit.Fahrenheit, 212.0);
+            Temperature celsius = new Temperature(Unit.Celsius, 100);
+
+            //Asserting Values.
+            Assert.AreEqual(fahrenheit, celsius);
+        }
     }
 }
