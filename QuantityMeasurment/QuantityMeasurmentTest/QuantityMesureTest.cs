@@ -456,5 +456,49 @@ namespace QuantityMeasurmentTest
             //Asserting Values.
             Assert.AreEqual(expected, result);
         }
+        /// <summary>
+        /// Test Case 7.31 Given 1 Kilogram And 1000 Gram Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1KiloGramsAnd1000GramsShouldReturnEqul()
+        {
+            //Creating Instances Of Weights.
+            Weight kiloGrams = new Weight(Unit.KiloGram, 1.0);
+            Weight grams = new Weight(Unit.Grams, 1000);
+
+            //Assertin Values.
+            Assert.AreEqual(kiloGrams, grams);
+        }
+
+        /// <summary>
+        /// Test Case 7.32 Given 1 Tonne And 1000  kilograms Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1TonneAnd1000KilogramsShouldReturnEqual()
+        {
+            //Creating Weight Instances For Tonne And Kilogram.
+            Weight tonne = new Weight(Unit.Tonne, 1);
+            Weight kilograms = new Weight(Unit.KiloGram, 1000);
+
+            //Asserting Value.
+            Assert.AreEqual(tonne, kilograms);
+        }
+
+        /// <summary>
+        /// Test Case 7.33 Given 1 Tonne And 1000 Grams Should Return 1001 Kilograms.
+        /// </summary>
+        [Test]
+        public void Given1TonneAnd1000GramShouldReturn1001Kilogram()
+        {
+            //Creating Weight Instances For Tonne And Grams.
+            Weight tonne = new Weight(Unit.Tonne, 1);
+            Weight grams = new Weight(Unit.Grams, 1000);
+
+            double expected = 1001;
+            double result = convertu.AddWeights(tonne, grams);
+
+            //Asserting Values.
+            Assert.AreEqual(expected, result);
+        }
     }
 }
