@@ -7,7 +7,7 @@ namespace QuantityMeasurment
     public class length
     {
         //Enum data members
-        public enum Unit { Feet, Inch, Yard }
+        public enum Unit { Feet, Inch, Yard, Centimeter }
         
         //Variables.
         public Unit unit;
