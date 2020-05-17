@@ -399,7 +399,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 5.27 Given 1 Gallon And 3.78 Litre Should Return Equal.
         /// </summary>
         [Test]
-        public void Given1GallonAnd3point78Litre_ShouldReturnEqual()
+        public void Given1GallonAnd3point78Litre_WhenCalculated_ShouldReturnEqual()
         {
             //Creating Volume Instances For Gallon And Litre.
             Volume gallon = new Volume(Unit.Gallon, 1.0);
@@ -413,7 +413,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 5.28 Given 1 Litre And 1000 MiliLitre Should Return Equal.
         /// </summary>
         [Test]
-        public void Given1LitreAnd1000MiliLitre_ShouldReturnEqual()
+        public void Given1LitreAnd1000MiliLitre_WhenCalculated_ShouldReturnEqual()
         {
             //Creating Volume Instances For Litre And Mililitre.
             Volume litre = new Volume(Unit.Litre, 1);
@@ -421,6 +421,40 @@ namespace QuantityMeasurmentTest
 
             //Asserting Values.
             Assert.AreEqual(litre, miliLitre);
+        }
+
+        /// <summary>
+        /// Test Case 6.29 Given 1 Gallon And 3.785 Litre Should Return 7.57.
+        /// </summary>
+        [Test]
+        public void Given1GallonAnd3point785Litre_WhenCalculated_ShouldReturn7point57Litre()
+        {
+            //Creating Volume Instances.
+            Volume gallon = new Volume(Unit.Gallon, 1);
+            Volume litre = new Volume(Unit.Litre, 3.785);
+
+            double expected = 7.57;
+            double result = convertu.AddVolumes(gallon, litre);
+
+            //Asserting Values.
+            Assert.AreEqual(expected, result);
+        }
+
+        /// <summary>
+        /// Test Case 6.30 Given 1 Litre And 1000 Mililitre Should Return 2 Litre.
+        /// </summary>
+        [Test]
+        public void Given1LitreAnd1000Mililitre_WhenCalculated_ShouldReturn2Litre()
+        {
+            //Creating Instances For Volumes.
+            Volume litre = new Volume(Unit.Litre, 1);
+            Volume miliLitre = new Volume(Unit.Mililitre, 1000);
+
+            double expected = 2;
+            double result = convertu.AddVolumes(litre, miliLitre);
+
+            //Asserting Values.
+            Assert.AreEqual(expected, result);
         }
     }
 }
