@@ -246,8 +246,74 @@ namespace QuantityMeasurmentTest
             Assert.AreEqual(inch, feet);
         }
 
+        /// <summary>
+        /// Test Case 2.17 Given 3 Feet And 1 Yard Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given3FeetAnd1Yard_ShouldReturnEqual()
+        {
+            //Creating Length Instances For Feet and Inch
+            length feet = new length(length.Unit.Feet, 3);
+            length yard = new length(length.Unit.Yard, 1);
 
+            //Asserting Values.
+            Assert.AreEqual(feet, yard);
+        }
 
+        /// <summary>
+        /// Test Case 2.18 Given 1 Feet And 1 Yard Should Return Not Equal.
+        /// </summary>
+        [Test]
+        public void Given1FeetAnd1YardShouldReturnNotEqual()
+        {
+            //Creating Length Instances For Feet and Inch
+            length feet = new length(length.Unit.Feet, 1);
+            length yard = new length(length.Unit.Yard, 1);
 
+            //Asserting Values.
+            Assert.AreNotEqual(feet, yard);
+        }
+
+        /// <summary>
+        /// Test Case 2.19 Given 1 Yard And 36 Inch Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1YardAnd36InchShouldReturEqual()
+        {
+            //Creating Length Instances For Feet and Inch
+            length yard = new length(length.Unit.Yard, 1);
+            length inch = new length(length.Unit.Inch, 36);
+
+            //Asserting Values.
+            Assert.AreEqual(yard, inch);
+        }
+
+        /// <summary>
+        /// Test Case 2.20 Given 36 Inch And 1 Yard Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given36InchAnD1YardShouldReturnEqual()
+        {
+            //Creating Length Instances For Feet and Inch
+            length yard = new length(length.Unit.Yard, 1);
+            length inch = new length(length.Unit.Inch, 36);
+
+            //Asserting Values.
+            Assert.AreEqual(inch, yard);
+        }
+
+        /// <summary>
+        /// Test Case 2.21 Given 1 Yard And 3 Feet Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1YardAnd3FeetShouldReturnEqual()
+        {
+            //Creating Length Instances For Feet and Inch
+            length yard = new length(length.Unit.Yard, 1);
+            length feet = new length(length.Unit.Feet, 3);
+
+            //Asserting Values.
+            Assert.AreEqual(yard, feet);
+        }
     }
 }
