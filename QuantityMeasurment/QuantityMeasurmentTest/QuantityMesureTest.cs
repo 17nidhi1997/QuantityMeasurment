@@ -3,6 +3,7 @@ namespace QuantityMeasurmentTest
 {
     public class Tests
     {
+        ConvertUnit convertu= new ConvertUnit();
         /// <summary>
         /// Test Case 1.1 Given 0 Feet And 0 Feet Should Return Equal.
         /// </summary>
@@ -328,6 +329,70 @@ namespace QuantityMeasurmentTest
 
             //Asserting Values.
             Assert.AreEqual(inch, centimeter);
+        }
+
+        /// <summary>
+        /// Test Case 4.23 Given 2 Inch And 2 Inch Should Return 4 Inch.
+        /// </summary>
+        [Test]
+        public void Gievn2InchAnd2Inch_WhenCalculated_ShouldReturn4Inch()
+        {
+            //Creating Inch Instances.
+            length inch1 = new length(Unit.Inch, 2);
+            length inch2 = new length(Unit.Inch, 2);
+            double result = convertu.AddLengths(inch1, inch2);
+            double expected = 4;
+
+            //Assertig Values.
+            Assert.AreEqual(expected, result);
+        }
+
+        /// <summary>
+        /// Test Case 4.24 Given 1 Feet And 2 Inch Should Return 14 Inches.
+        /// </summary>
+        [Test]
+        public void Given1FeetAnd2Inch_WhenCalculated_ShouldReturn14Inch()
+        {
+            //Creating Feet And Inch Instances.
+            length inch = new length(Unit.Inch, 2);
+            length feet = new length(Unit.Feet, 1);
+            double result = convertu.AddLengths(feet, inch);
+            double expected = 14;
+
+            //Assertig Values.
+            Assert.AreEqual(expected, result);
+        }
+
+        /// <summary>
+        /// Test Case 4.25 Given 1 Feet And 1 Feet Should Return 24 Inches.
+        /// </summary>
+        [Test]
+        public void Given1FeetAnd1Feet_WhenCalculated_ShouldReturn24Inch()
+        {
+            length feet = new length(Unit.Feet, 1);
+            length feet1 = new length(Unit.Feet, 1);
+            double result = convertu.AddLengths(feet, feet1);
+            double expected = 24;
+
+            //Assertig Values.
+            Assert.AreEqual(expected, result);
+        }
+
+        /// <summary>
+        /// Test Case 4.26 Given 2 Inch Adn 2.5 Centimeter Should Return 3 Inch. 
+        /// </summary>
+        [Test]
+        public void Given2InchAnd2point5Centimeter_WhenCalculated_ShouldReturn3Inch()
+        {
+            //Creating Length Instances and Performing Operation.
+            length inch = new length(Unit.Inch, 2);
+            length centimeter = new length(Unit.Centimeter, 2.5);
+
+            double result = convertu.AddLengths(inch, centimeter);
+            double expected = 3;
+
+            //Asserting Values.
+            Assert.AreEqual(expected, result);
         }
     }
 }
