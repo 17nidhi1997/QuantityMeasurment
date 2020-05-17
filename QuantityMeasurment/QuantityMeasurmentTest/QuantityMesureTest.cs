@@ -315,5 +315,19 @@ namespace QuantityMeasurmentTest
             //Asserting Values.
             Assert.AreEqual(yard, feet);
         }
+
+        /// <summary>
+        /// Test Case 3.22 Given 2 Inch And 5 Centimeter Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given2InchAnd5Centimeter_WhenCalculated_ShouldReturnEqual()
+        {
+            //Creating Length Instances For Inch And Centimeter.
+            length inch = new length(length.Unit.Inch, 2);
+            length centimeter = new length(length.Unit.Centimeter, 5);
+
+            //Asserting Values.
+            Assert.AreEqual(inch, centimeter);
+        }
     }
 }
