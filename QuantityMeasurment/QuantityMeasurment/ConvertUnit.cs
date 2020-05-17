@@ -20,6 +20,10 @@ namespace QuantityMeasurment
                 {
                     value = objectName.value * 36;
                 }
+                else if (objectName.unit.Equals(length.Unit.Centimeter))
+                {
+                    value = Math.Round(objectName.value / 2.54);
+                }
             }
             catch (Exception)
             {
