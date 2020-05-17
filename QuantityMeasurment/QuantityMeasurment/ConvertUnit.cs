@@ -31,5 +31,19 @@ namespace QuantityMeasurment
             }
             return value;
         }
+        //Add length to units
+        public double AddLengths(length object1, length object2)
+        {
+            try
+            {
+                double value1 = ConvertToInch(object1);
+                double value2 = ConvertToInch(object2);
+                return value1 + value2;
+            }
+            catch (QuantityMeasurementException)
+            {
+                throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INVALID_TYPE, "Invalid Type");
+            }
+        }
     }
 }
