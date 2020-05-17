@@ -250,7 +250,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 2.17 Given 3 Feet And 1 Yard Should Return Equal.
         /// </summary>
         [Test]
-        public void Given3FeetAnd1Yard_ShouldReturnEqual()
+        public void Given3FeetAnd1Yard_WhenCalculated_ShouldReturnEqual()
         {
             //Creating Length Instances For Feet and Inch
             length feet = new length(length.Unit.Feet, 3);
@@ -264,7 +264,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 2.18 Given 1 Feet And 1 Yard Should Return Not Equal.
         /// </summary>
         [Test]
-        public void Given1FeetAnd1YardShouldReturnNotEqual()
+        public void Given1FeetAnd1Yard_WhenCalculated_ShouldReturnNotEqual()
         {
             //Creating Length Instances For Feet and Inch
             length feet = new length(length.Unit.Feet, 1);
@@ -278,7 +278,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 2.19 Given 1 Yard And 36 Inch Should Return Equal.
         /// </summary>
         [Test]
-        public void Given1YardAnd36InchShouldReturEqual()
+        public void Given1YardAnd36Inch_WhenCalculated_ShouldReturEqual()
         {
             //Creating Length Instances For Feet and Inch
             length yard = new length(length.Unit.Yard, 1);
@@ -292,7 +292,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 2.20 Given 36 Inch And 1 Yard Should Return Equal.
         /// </summary>
         [Test]
-        public void Given36InchAnD1YardShouldReturnEqual()
+        public void Given36InchAnD1Yard_WhenCalculated_ShouldReturnEqual()
         {
             //Creating Length Instances For Feet and Inch
             length yard = new length(length.Unit.Yard, 1);
@@ -306,7 +306,7 @@ namespace QuantityMeasurmentTest
         /// Test Case 2.21 Given 1 Yard And 3 Feet Should Return Equal.
         /// </summary>
         [Test]
-        public void Given1YardAnd3FeetShouldReturnEqual()
+        public void Given1YardAnd3Feet_WhenCalculated_ShouldReturnEqual()
         {
             //Creating Length Instances For Feet and Inch
             length yard = new length(length.Unit.Yard, 1);
