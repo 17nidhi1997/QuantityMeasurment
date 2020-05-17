@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace QuantityMeasurment
-{ 
+{
     class ConvertUnit
     {
         //Constants
@@ -74,6 +74,21 @@ namespace QuantityMeasurment
                 throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INVALID_TYPE, "Invalid Type");
             }
             return value;
+        }
+
+        // Function to Add Volumes And result into Litre.
+        public static double AddVolumes(Volume object1, Volume object2)
+        {
+            try
+            {
+                double value1 = ConvertToLitre(object1);
+                double value2 = ConvertToLitre(object2);
+                return value1 + value2;
+            }
+            catch (QuantityMeasurementException)
+            {
+                throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INVALID_TYPE, "Invalid Type");
+            }
         }
     }
 }
