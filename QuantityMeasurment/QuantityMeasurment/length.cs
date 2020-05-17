@@ -4,11 +4,8 @@ using System.Text;
 
 namespace QuantityMeasurment
 {
-    public class length
+    public class length:ILength
     {
-        //Enum data members
-        public enum Unit { Feet, Inch, Yard, Centimeter }
-        
         //Variables.
         public Unit unit;
         public double value;
