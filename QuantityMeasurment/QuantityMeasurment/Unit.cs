@@ -7,7 +7,18 @@ namespace QuantityMeasurment
     // Enum For Length Unit and volumn unit.
     public enum Unit
     {
-        Feet, Inch, Yard, Centimeter, Gallon, Mililitre, Grams, Tonne, Fahrenheit
+        Feet,
+        Inch, 
+        Yard, 
+        Centimeter,
+        Gallon, 
+        Litre,
+        Mililitre, 
+        Grams,
+        Tonne,
+        Fahrenheit,
+        KiloGram,
+        Celsius
     }
 
 }

@@ -15,21 +15,57 @@ namespace QuantityMeasurment
         private static readonly double GRAM_TO_KILOGRAM_CONVERSION = 1000;
 
         // Function To Covert Given Objects Unit Value Into Inch Unit.
-        public static double ConvertToInch(length objectName)
+        /*   public static double ConvertToInch(length objectName)
+           {
+               double value = objectName.value;
+               try
+               {
+                   //If Else Block for checking the specified Unit and converting into Inch.
+                   if (objectName.unit.Equals(Unit.Feet))
+                   {
+                       value = objectName.value * FEET_TO_INCH_CONVERSION;
+                   }
+                   else if (objectName.unit.Equals(Unit.Yard))
+                   {
+                       value = objectName.value * YARD_TO_INCH_CONVERSION;
+                   }
+                   else if (objectName.unit.Equals(Unit.Centimeter))
+                   {
+                       value = Math.Round(objectName.value / CENTIMETER_TO_INCH_CONVERSION);
+                   }
+               }
+               catch (QuantityMeasurementException)
+               {
+                   throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.INVALID_TYPE, "Invalid");
+               }
+               return value;
+           }*/
+        public static double ConvertToInch(Length objectName)
         {
             double value = objectName.value;
+            var units = objectName.unit;
+            var feets = Unit.Feet;
+            var yards = Unit.Yard;
+            var centi = Unit.Centimeter;
+            /*  switch(objectName)
+              {
+                  case Unit.Feet = objectName.value * FEET_TO_INCH_CONVERSION;
+                                 return value;
+                                 break;
+              }*/
+
             try
             {
                 //If Else Block for checking the specified Unit and converting into Inch.
-                if (objectName.unit.Equals(Unit.Feet))
+                if (units.Equals(feets))
                 {
                     value = objectName.value * FEET_TO_INCH_CONVERSION;
                 }
-                else if (objectName.unit.Equals(Unit.Yard))
+                else if (units.Equals(yards))
                 {
                     value = objectName.value * YARD_TO_INCH_CONVERSION;
                 }
-                else if (objectName.unit.Equals(Unit.Centimeter))
+                else if (units.Equals(centi))
                 {
                     value = Math.Round(objectName.value / CENTIMETER_TO_INCH_CONVERSION);
                 }
@@ -40,6 +76,7 @@ namespace QuantityMeasurment
             }
             return value;
         }
+
         //Add the length
         public double AddLengths(length object1, length object2)
         {
